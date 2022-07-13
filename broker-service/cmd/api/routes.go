@@ -22,7 +22,7 @@ func (app *Config) routes() http.Handler {
 
 	router.Use(middleware.Heartbeat("/ping"))
 	router.Use(middleware.Logger)
-	router.Get("/", app.Broker)
+	router.Post("/", app.Broker)
 
 	return router
 }
